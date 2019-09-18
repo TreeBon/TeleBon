@@ -263,7 +263,7 @@ enum PARAM_NUM {
     PARAM_NUM_COUNT = 9
 };
 
-void Java_org_telegram_ui_Components_AnimatedFileDrawable_getVideoInfo(JNIEnv *env, jclass clazz, jstring src, jintArray data) {
+void Java_org_telegrambon_ui_Components_AnimatedFileDrawable_getVideoInfo(JNIEnv *env, jclass clazz, jstring src, jintArray data) {
     VideoInfo *info = new VideoInfo();
 
     char const *srcString = env->GetStringUTFChars(src, 0);
@@ -338,7 +338,7 @@ void Java_org_telegram_ui_Components_AnimatedFileDrawable_getVideoInfo(JNIEnv *e
     }
 }
 
-jlong Java_org_telegram_ui_Components_AnimatedFileDrawable_createDecoder(JNIEnv *env, jclass clazz, jstring src, jintArray data, jint account, jlong streamFileSize, jobject stream, jboolean preview) {
+jlong Java_org_telegrambon_ui_Components_AnimatedFileDrawable_createDecoder(JNIEnv *env, jclass clazz, jstring src, jintArray data, jint account, jlong streamFileSize, jobject stream, jboolean preview) {
     VideoInfo *info = new VideoInfo();
     
     char const *srcString = env->GetStringUTFChars(src, 0);
@@ -440,7 +440,7 @@ jlong Java_org_telegram_ui_Components_AnimatedFileDrawable_createDecoder(JNIEnv 
     return (jlong) (intptr_t) info;
 }
 
-void Java_org_telegram_ui_Components_AnimatedFileDrawable_destroyDecoder(JNIEnv *env, jclass clazz, jlong ptr) {
+void Java_org_telegrambon_ui_Components_AnimatedFileDrawable_destroyDecoder(JNIEnv *env, jclass clazz, jlong ptr) {
     if (ptr == NULL) {
         return;
     }
@@ -465,7 +465,7 @@ void Java_org_telegram_ui_Components_AnimatedFileDrawable_destroyDecoder(JNIEnv 
     delete info;
 }
 
-void Java_org_telegram_ui_Components_AnimatedFileDrawable_stopDecoder(JNIEnv *env, jclass clazz, jlong ptr) {
+void Java_org_telegrambon_ui_Components_AnimatedFileDrawable_stopDecoder(JNIEnv *env, jclass clazz, jlong ptr) {
     if (ptr == NULL) {
         return;
     }
@@ -473,7 +473,7 @@ void Java_org_telegram_ui_Components_AnimatedFileDrawable_stopDecoder(JNIEnv *en
     info->stopped = true;
 }
 
-void Java_org_telegram_ui_Components_AnimatedFileDrawable_prepareToSeek(JNIEnv *env, jclass clazz, jlong ptr) {
+void Java_org_telegrambon_ui_Components_AnimatedFileDrawable_prepareToSeek(JNIEnv *env, jclass clazz, jlong ptr) {
     if (ptr == NULL) {
         return;
     }
@@ -481,7 +481,7 @@ void Java_org_telegram_ui_Components_AnimatedFileDrawable_prepareToSeek(JNIEnv *
     info->seeking = true;
 }
 
-void Java_org_telegram_ui_Components_AnimatedFileDrawable_seekToMs(JNIEnv *env, jclass clazz, jlong ptr, jlong ms, jboolean precise) {
+void Java_org_telegrambon_ui_Components_AnimatedFileDrawable_seekToMs(JNIEnv *env, jclass clazz, jlong ptr, jlong ms, jboolean precise) {
     if (ptr == NULL) {
         return;
     }
@@ -550,7 +550,7 @@ void Java_org_telegram_ui_Components_AnimatedFileDrawable_seekToMs(JNIEnv *env, 
     }
 }
     
-jint Java_org_telegram_ui_Components_AnimatedFileDrawable_getVideoFrame(JNIEnv *env, jclass clazz, jlong ptr, jobject bitmap, jintArray data, jint stride, jboolean preview) {
+jint Java_org_telegrambon_ui_Components_AnimatedFileDrawable_getVideoFrame(JNIEnv *env, jclass clazz, jlong ptr, jobject bitmap, jintArray data, jint stride, jboolean preview) {
     if (ptr == NULL || bitmap == nullptr) {
         return 0;
     }
@@ -669,7 +669,7 @@ jint Java_org_telegram_ui_Components_AnimatedFileDrawable_getVideoFrame(JNIEnv *
 }
 
 jint videoOnJNILoad(JavaVM *vm, JNIEnv *env) {
-    jclass_AnimatedFileDrawableStream = (jclass) env->NewGlobalRef(env->FindClass("org/telegram/messenger/AnimatedFileDrawableStream"));
+    jclass_AnimatedFileDrawableStream = (jclass) env->NewGlobalRef(env->FindClass("org/telegrambon/messenger/AnimatedFileDrawableStream"));
     if (jclass_AnimatedFileDrawableStream == 0) {
         return JNI_FALSE;
     }
