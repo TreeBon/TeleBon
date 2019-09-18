@@ -818,7 +818,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
 
         emptyView = new EmptyTextProgressView(context);
         emptyView.setTextColor(0xff808080);
-        emptyView.setProgressBarColor(0xff527da3);
+        emptyView.setProgressBarColor(0xffffbb11);
         emptyView.setShowAtCenter(false);
         if (selectedAlbum != null) {
             emptyView.setText(LocaleController.getString("NoPhotos", R.string.NoPhotos));
@@ -1674,7 +1674,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
                     FrameLayout frameLayout = new FrameLayout(mContext);
                     view = frameLayout;
                     RadialProgressView progressBar = new RadialProgressView(mContext);
-                    progressBar.setProgressColor(0xff527da3);
+                    progressBar.setProgressColor(0xffffbb11);
                     frameLayout.addView(progressBar, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT));
                     break;
             }

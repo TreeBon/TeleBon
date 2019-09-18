@@ -271,7 +271,7 @@ public class ThemePreviewActivity extends BaseFragment implements NotificationCe
         });
 
         if (messagesAdapter.showSecretMessages) {
-            actionBar2.setTitle("Telegram Beta Chat");
+            actionBar2.setTitle("TelegramBon Beta Chat");
             actionBar2.setSubtitle(LocaleController.formatPluralString("Members", 505));
         } else {
             String name = applyingTheme.info != null ? applyingTheme.info.title : applyingTheme.getName();

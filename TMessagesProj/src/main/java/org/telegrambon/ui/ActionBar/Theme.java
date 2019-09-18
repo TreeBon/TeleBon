@@ -1279,8 +1279,8 @@ public class Theme {
         defaultColors.put(key_dialogCheckboxSquareDisabled, 0xffb0b0b0);
         defaultColors.put(key_dialogRadioBackground, 0xffb3b3b3);
         defaultColors.put(key_dialogRadioBackgroundChecked, 0xff37a9f0);
-        defaultColors.put(key_dialogProgressCircle, 0xff527da3);
-        defaultColors.put(key_dialogLineProgress, 0xff527da3);
+        defaultColors.put(key_dialogProgressCircle, 0xffffbb11);
+        defaultColors.put(key_dialogLineProgress, 0xffffbb11);
         defaultColors.put(key_dialogLineProgressBackground, 0xffdbdbdb);
         defaultColors.put(key_dialogButton, 0xff4991cc);
         defaultColors.put(key_dialogButtonSelector, 0x0f000000);
@@ -1305,7 +1305,7 @@ public class Theme {
         defaultColors.put(key_windowBackgroundUnchecked, 0xff9da7b1);
         defaultColors.put(key_windowBackgroundChecked, 0xff579ed9);
         defaultColors.put(key_windowBackgroundCheckText, 0xffffffff);
-        defaultColors.put(key_progressCircle, 0xff527da3);
+        defaultColors.put(key_progressCircle, 0xffffbb11);
         defaultColors.put(key_windowBackgroundWhiteGrayIcon, 0xff81868b);
         defaultColors.put(key_windowBackgroundWhiteBlueText, 0xff4092cd);
         defaultColors.put(key_windowBackgroundWhiteBlueText2, 0xff3a95d5);
@@ -1404,7 +1404,7 @@ public class Theme {
         defaultColors.put(key_avatar_nameInMessageBlue, 0xff4e92cc);
         defaultColors.put(key_avatar_nameInMessagePink, 0xff4e92cc);
 
-        defaultColors.put(key_actionBarDefault, 0xff527da3);
+        defaultColors.put(key_actionBarDefault, 0xffffbb11);
         defaultColors.put(key_actionBarDefaultIcon, 0xffffffff);
         defaultColors.put(key_actionBarActionModeDefault, 0xffffffff);
         defaultColors.put(key_actionBarActionModeDefaultTop, 0x10000000);
