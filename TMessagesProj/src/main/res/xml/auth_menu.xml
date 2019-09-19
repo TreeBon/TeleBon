@@ -5,8 +5,8 @@
     <PreferenceScreen android:key="account_settings"
         android:title="@string/AccountSettings"
         android:summary="">
-        <intent android:action="org.telegrambon.messenger.OPEN_ACCOUNT"
-            android:targetPackage="org.telegrambon.messenger"
-            android:targetClass="org.telegrambon.ui.LaunchActivity"/>
+        <intent android:action="org.telebon.messenger.OPEN_ACCOUNT"
+            android:targetPackage="org.telebon.messenger"
+            android:targetClass="org.telebon.ui.LaunchActivity"/>
     </PreferenceScreen>
 </PreferenceScreen>

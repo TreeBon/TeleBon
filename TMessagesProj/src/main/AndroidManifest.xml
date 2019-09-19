@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-    package="org.telegrambon.messenger"
+    package="org.telebon.messenger"
     android:installLocation="auto">
 
     <supports-screens android:anyDensity="true"
@@ -67,19 +67,19 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:node="replace" />
 
     <application
-        android:name="org.telegrambon.messenger.${applicationClassName}"
+        android:name="org.telebon.messenger.${applicationClassName}"
         android:allowBackup="false"
         android:hardwareAccelerated="@bool/useHardwareAcceleration"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:largeHeap="true"
         android:theme="@style/Theme.TMessages.Start"
-        android:manageSpaceActivity="org.telegrambon.ui.ExternalActionActivity"
+        android:manageSpaceActivity="org.telebon.ui.ExternalActionActivity"
         android:supportsRtl="false"
         tools:replace="android:supportsRtl">
 
         <activity
-            android:name="org.telegrambon.ui.LaunchActivity"
+            android:name="org.telebon.ui.LaunchActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:launchMode="singleTask"
@@ -122,7 +122,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="vnd.android.cursor.item/vnd.org.telegrambon.messenger.android.profile"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.org.telebon.messenger.android.profile"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
@@ -144,7 +144,7 @@
             <meta-data android:name="android.service.chooser.chooser_target_service" android:value=".TgChooserTargetService" />
         </activity>
         <activity
-            android:name="org.telegrambon.ui.ShareActivity"
+            android:name="org.telebon.ui.ShareActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:windowSoftInputMode="adjustPan"
@@ -159,27 +159,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.telegrambon.ui.ExternalActionActivity"
+            android:name="org.telebon.ui.ExternalActionActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:windowSoftInputMode="adjustPan">
             <intent-filter android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round">
-                <action android:name="org.telegrambon.passport.AUTHORIZE"/>
+                <action android:name="org.telebon.passport.AUTHORIZE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
         <activity
-            android:name="org.telegrambon.ui.IntroActivity"
+            android:name="org.telebon.ui.IntroActivity"
             android:launchMode="singleTask"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
         </activity>
         <activity
-            android:name="org.telegrambon.messenger.OpenChatReceiver"
+            android:name="org.telebon.messenger.OpenChatReceiver"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:exported="true">
         </activity>
         <activity
-            android:name="org.telegrambon.ui.PopupNotificationActivity"
+            android:name="org.telebon.ui.PopupNotificationActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
@@ -189,61 +189,61 @@
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
         <activity
-            android:name="org.telegrambon.ui.VoIPActivity"
+            android:name="org.telebon.ui.VoIPActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:windowSoftInputMode="adjustNothing"
 			android:taskAffinity="${applicationId}.voip">
         </activity>
         <activity
-            android:name="org.telegrambon.ui.VoIPGroupActivity"
+            android:name="org.telebon.ui.VoIPGroupActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
 			android:windowSoftInputMode="adjustNothing"
             android:taskAffinity="${applicationId}.voip">
         </activity>
-        <activity android:name="org.telegrambon.ui.VoIPPermissionActivity"
+        <activity android:name="org.telebon.ui.VoIPPermissionActivity"
                   android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
                   android:taskAffinity="${applicationId}.voip"
                   android:excludeFromRecents="true"
                 android:theme="@style/Theme.TMessages.Transparent"/>
-        <activity android:name="org.telegrambon.ui.VoIPFeedbackActivity"
+        <activity android:name="org.telebon.ui.VoIPFeedbackActivity"
                   android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
 				  android:taskAffinity="${applicationId}.voip_feedback"
                   android:excludeFromRecents="true"
                 android:theme="@style/Theme.TMessages.TransparentWithAlerts"/>
 
         <receiver
-            android:name="org.telegrambon.messenger.AutoMessageHeardReceiver"
+            android:name="org.telebon.messenger.AutoMessageHeardReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="org.telegrambon.messenger.ACTION_MESSAGE_HEARD"/>
+                <action android:name="org.telebon.messenger.ACTION_MESSAGE_HEARD"/>
             </intent-filter>
         </receiver>
 
         <receiver
-            android:name="org.telegrambon.messenger.AutoMessageReplyReceiver"
+            android:name="org.telebon.messenger.AutoMessageReplyReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="org.telegrambon.messenger.ACTION_MESSAGE_REPLY"/>
+                <action android:name="org.telebon.messenger.ACTION_MESSAGE_REPLY"/>
             </intent-filter>
         </receiver>
 
         <receiver
-            android:name="org.telegrambon.messenger.SmsReceiver"
+            android:name="org.telebon.messenger.SmsReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/>
             </intent-filter>
         </receiver>
 
-        <receiver android:name="org.telegrambon.messenger.CallReceiver">
+        <receiver android:name="org.telebon.messenger.CallReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PHONE_STATE"/>
             </intent-filter>
         </receiver>
 
-        <service android:name="org.telegrambon.messenger.AuthenticatorService" android:exported="true">
+        <service android:name="org.telebon.messenger.AuthenticatorService" android:exported="true">
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator"/>
             </intent-filter>
@@ -251,7 +251,7 @@
                 android:resource="@xml/auth"/>
         </service>
 
-        <service android:name="org.telegrambon.messenger.ContactsSyncAdapterService" android:exported="true">
+        <service android:name="org.telebon.messenger.ContactsSyncAdapterService" android:exported="true">
             <intent-filter>
                 <action android:name="android.content.SyncAdapter" />
             </intent-filter>
@@ -262,7 +262,7 @@
         </service>
 
         <service
-            android:name="org.telegrambon.messenger.TgChooserTargetService"
+            android:name="org.telebon.messenger.TgChooserTargetService"
             android:label="@string/AppName"
             android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">
             <intent-filter>
@@ -270,22 +270,22 @@
             </intent-filter>
         </service>
 
-        <service android:name="org.telegrambon.messenger.KeepAliveJob"
+        <service android:name="org.telebon.messenger.KeepAliveJob"
                  android:exported="false"
                  android:permission="android.permission.BIND_JOB_SERVICE"/>
-        <service android:name="org.telegrambon.messenger.BringAppForegroundService" android:enabled="true"/>
-        <service android:name="org.telegrambon.messenger.NotificationsService" android:enabled="true"/>
-        <service android:name="org.telegrambon.messenger.NotificationRepeat" android:exported="false"/>
-        <service android:name="org.telegrambon.messenger.VideoEncodingService" android:enabled="true"/>
-        <service android:name="org.telegrambon.messenger.LocationSharingService" android:enabled="true"/>
-        <service android:name="org.telegrambon.messenger.voip.VoIPService" android:enabled="true"/>
-        <service android:name="org.telegrambon.messenger.MusicPlayerService" android:exported="true" android:enabled="true"/>
-        <service android:name="org.telegrambon.messenger.MusicBrowserService" android:exported="true">
+        <service android:name="org.telebon.messenger.BringAppForegroundService" android:enabled="true"/>
+        <service android:name="org.telebon.messenger.NotificationsService" android:enabled="true"/>
+        <service android:name="org.telebon.messenger.NotificationRepeat" android:exported="false"/>
+        <service android:name="org.telebon.messenger.VideoEncodingService" android:enabled="true"/>
+        <service android:name="org.telebon.messenger.LocationSharingService" android:enabled="true"/>
+        <service android:name="org.telebon.messenger.voip.VoIPService" android:enabled="true"/>
+        <service android:name="org.telebon.messenger.MusicPlayerService" android:exported="true" android:enabled="true"/>
+        <service android:name="org.telebon.messenger.MusicBrowserService" android:exported="true">
             <intent-filter>
                 <action android:name="android.media.browse.MediaBrowserService"/>
             </intent-filter>
         </service>
-        <service android:name="org.telegrambon.messenger.WearDataLayerListenerService">
+        <service android:name="org.telebon.messenger.WearDataLayerListenerService">
             <intent-filter>
                 <!-- listeners receive events that match the action and data filters -->
                 <action android:name="com.google.android.gms.wearable.DATA_CHANGED" />
@@ -295,57 +295,57 @@
                 <data android:scheme="wear" android:host="*" />
             </intent-filter>
         </service>
-        <service android:name="org.telegrambon.messenger.voip.TelegramConnectionService" android:permission="android.permission.BIND_TELECOM_CONNECTION_SERVICE">
+        <service android:name="org.telebon.messenger.voip.TelegramConnectionService" android:permission="android.permission.BIND_TELECOM_CONNECTION_SERVICE">
             <intent-filter>
                 <action android:name="android.telecom.ConnectionService" />
             </intent-filter>
         </service>
 
-		<receiver android:name="org.telegrambon.messenger.MusicPlayerReceiver" >
+		<receiver android:name="org.telebon.messenger.MusicPlayerReceiver" >
             <intent-filter>
-                <action android:name="org.telegrambon.android.musicplayer.close" />
-                <action android:name="org.telegrambon.android.musicplayer.pause" />
-                <action android:name="org.telegrambon.android.musicplayer.next" />
-                <action android:name="org.telegrambon.android.musicplayer.play" />
-                <action android:name="org.telegrambon.android.musicplayer.previous" />
+                <action android:name="org.telebon.android.musicplayer.close" />
+                <action android:name="org.telebon.android.musicplayer.pause" />
+                <action android:name="org.telebon.android.musicplayer.next" />
+                <action android:name="org.telebon.android.musicplayer.play" />
+                <action android:name="org.telebon.android.musicplayer.previous" />
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
                 <action android:name="android.media.AUDIO_BECOMING_NOISY" />
             </intent-filter>
         </receiver>
-        <receiver android:name="org.telegrambon.messenger.voip.VoIPMediaButtonReceiver">
+        <receiver android:name="org.telebon.messenger.voip.VoIPMediaButtonReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="org.telegrambon.messenger.AppStartReceiver" android:enabled="true">
+        <receiver android:name="org.telebon.messenger.AppStartReceiver" android:enabled="true">
             <intent-filter>
-                <action android:name="org.telegrambon.start" />
+                <action android:name="org.telebon.start" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="org.telegrambon.messenger.RefererReceiver" android:exported="true" android:permission="android.permission.INSTALL_PACKAGES">
+        <receiver android:name="org.telebon.messenger.RefererReceiver" android:exported="true" android:permission="android.permission.INSTALL_PACKAGES">
             <intent-filter>
                 <action android:name="com.android.vending.INSTALL_REFERRER" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="org.telegrambon.messenger.WearReplyReceiver" android:enabled="true"/>
+        <receiver android:name="org.telebon.messenger.WearReplyReceiver" android:enabled="true"/>
 
-        <receiver android:name="org.telegrambon.messenger.StopLiveLocationReceiver" android:enabled="true"/>
+        <receiver android:name="org.telebon.messenger.StopLiveLocationReceiver" android:enabled="true"/>
 
-        <receiver android:name="org.telegrambon.messenger.PopupReplyReceiver" android:enabled="true"/>
+        <receiver android:name="org.telebon.messenger.PopupReplyReceiver" android:enabled="true"/>
 
-        <receiver android:name="org.telegrambon.messenger.NotificationCallbackReceiver" android:enabled="true" android:exported="false"/>
+        <receiver android:name="org.telebon.messenger.NotificationCallbackReceiver" android:enabled="true" android:exported="false"/>
 
-        <receiver android:name="org.telegrambon.messenger.ShareBroadcastReceiver" android:enabled="true"/>
+        <receiver android:name="org.telebon.messenger.ShareBroadcastReceiver" android:enabled="true"/>
 
-        <receiver android:name="org.telegrambon.messenger.CustomTabsCopyReceiver" android:enabled="true"/>
+        <receiver android:name="org.telebon.messenger.CustomTabsCopyReceiver" android:enabled="true"/>
 
-        <receiver android:name="org.telegrambon.messenger.NotificationDismissReceiver" android:exported="false"/>
+        <receiver android:name="org.telebon.messenger.NotificationDismissReceiver" android:exported="false"/>
 
-        <receiver android:name="org.telegrambon.messenger.voip.VoIPActionsReceiver" android:exported="false"/>
+        <receiver android:name="org.telebon.messenger.voip.VoIPActionsReceiver" android:exported="false"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -359,13 +359,13 @@
 
         <provider
             android:authorities="${applicationId}.notification_image_provider"
-            android:name="org.telegrambon.messenger.NotificationImageProvider"
+            android:name="org.telebon.messenger.NotificationImageProvider"
             android:exported="false"
             android:grantUriPermissions="true"/>
 
         <provider
             android:authorities="${applicationId}.call_sound_provider"
-            android:name="org.telegrambon.messenger.voip.CallNotificationSoundProvider"
+            android:name="org.telebon.messenger.voip.CallNotificationSoundProvider"
             android:exported="true"/>
 
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>

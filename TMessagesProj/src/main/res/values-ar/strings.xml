@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AppName">TelegramBon</string>
-    <string name="AppNameBeta">TelegramBon Beta</string>
+    <string name="AppName">TeleBon</string>
+    <string name="AppNameBeta">TeleBon Beta</string>
     <string name="LanguageName">العربية</string>
     <string name="English">الإنجليزية</string>
     <string name="LanguageNameInEnglish">Arabic</string>
@@ -2151,7 +2151,7 @@
     <string name="PrivacyPhoneTitle">من يمْكنه رؤية رقم هاتفي؟</string>
     <string name="PrivacyPhoneTitle2">من يمْكنه إيجادي عبر رقم هاتفي؟</string>
     <string name="PrivacyPhoneInfo">المستخدمون الذين يملكون رقمك محفوظًا في دليل عناوينهم سيتمكنون من رؤيته في تيليجرام.</string>
-    <string name="PrivacyPhoneInfo3">Users who add your number to their contacts will see it on TelegramBon only if they are your contacts.</string>
+    <string name="PrivacyPhoneInfo3">Users who add your number to their contacts will see it on TeleBon only if they are your contacts.</string>
     <string name="PrivacyPhoneInfo2">يمكنك إضافة مستخدمين أو مجموعات بأكملها كاستثناءات ليتجاوزوا القيم في الأعلى.</string>
     <string name="PrivacyForwards">الرسائل المحوَّلة</string>
     <string name="PrivacyForwardsEverybody">رابط إلى حسابك</string>

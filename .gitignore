@@ -8,4 +8,4 @@ local.properties
 gradle.properties
 google-services.json
 
-TMessagesProj/src/main/java/org/telegrambon/messenger/BuildVars.java
+TMessagesProj/src/main/java/org/telebon/messenger/BuildVars.java

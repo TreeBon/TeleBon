@@ -1,4 +1,4 @@
-package org.telegrambon.messenger;
+package org.telebon.messenger;
 
 import android.content.Context;
 import androidx.multidex.MultiDex;

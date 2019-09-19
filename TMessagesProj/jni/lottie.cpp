@@ -36,7 +36,7 @@ typedef struct LottieInfo {
     bool nextFrameIsCacheFrame = false;
 };
 
-jlong Java_org_telegrambon_ui_Components_RLottieDrawable_create(JNIEnv *env, jclass clazz, jstring src, jintArray data, jboolean precache, jintArray colorReplacement) {
+jlong Java_org_telebon_ui_Components_RLottieDrawable_create(JNIEnv *env, jclass clazz, jstring src, jintArray data, jboolean precache, jintArray colorReplacement) {
     LottieInfo *info = new LottieInfo();
 
     std::map<int32_t, int32_t> colors;
@@ -97,7 +97,7 @@ jlong Java_org_telegrambon_ui_Components_RLottieDrawable_create(JNIEnv *env, jcl
     return (jlong) (intptr_t) info;
 }
 
-jlong Java_org_telegrambon_ui_Components_RLottieDrawable_createWithJson(JNIEnv *env, jclass clazz, jstring json, jstring name, jintArray data) {
+jlong Java_org_telebon_ui_Components_RLottieDrawable_createWithJson(JNIEnv *env, jclass clazz, jstring json, jstring name, jintArray data) {
     LottieInfo *info = new LottieInfo();
 
     char const *jsonString = env->GetStringUTFChars(json, 0);
@@ -126,7 +126,7 @@ jlong Java_org_telegrambon_ui_Components_RLottieDrawable_createWithJson(JNIEnv *
     return (jlong) (intptr_t) info;
 }
 
-void Java_org_telegrambon_ui_Components_RLottieDrawable_destroy(JNIEnv *env, jclass clazz, jlong ptr) {
+void Java_org_telebon_ui_Components_RLottieDrawable_destroy(JNIEnv *env, jclass clazz, jlong ptr) {
     if (ptr == NULL) {
         return;
     }
@@ -134,7 +134,7 @@ void Java_org_telegrambon_ui_Components_RLottieDrawable_destroy(JNIEnv *env, jcl
     delete info;
 }
 
-void Java_org_telegrambon_ui_Components_RLottieDrawable_setLayerColor(JNIEnv *env, jclass clazz, jlong ptr, jstring layer, jint color) {
+void Java_org_telebon_ui_Components_RLottieDrawable_setLayerColor(JNIEnv *env, jclass clazz, jlong ptr, jstring layer, jint color) {
     if (ptr == NULL || layer == nullptr) {
         return;
     }
@@ -146,7 +146,7 @@ void Java_org_telegrambon_ui_Components_RLottieDrawable_setLayerColor(JNIEnv *en
     }
 }
 
-void Java_org_telegrambon_ui_Components_RLottieDrawable_createCache(JNIEnv *env, jclass clazz, jlong ptr, jobject bitmap, jint w, jint h, jint stride) {
+void Java_org_telebon_ui_Components_RLottieDrawable_createCache(JNIEnv *env, jclass clazz, jlong ptr, jobject bitmap, jint w, jint h, jint stride) {
     if (ptr == NULL || bitmap == nullptr) {
         return;
     }
@@ -207,7 +207,7 @@ void Java_org_telegrambon_ui_Components_RLottieDrawable_createCache(JNIEnv *env,
     }
 }
 
-jint Java_org_telegrambon_ui_Components_RLottieDrawable_getFrame(JNIEnv *env, jclass clazz, jlong ptr, jint frame, jobject bitmap, jint w, jint h, jint stride) {
+jint Java_org_telebon_ui_Components_RLottieDrawable_getFrame(JNIEnv *env, jclass clazz, jlong ptr, jint frame, jobject bitmap, jint w, jint h, jint stride) {
     if (ptr == NULL || bitmap == nullptr) {
         return 0;
     }

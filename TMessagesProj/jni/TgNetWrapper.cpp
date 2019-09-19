@@ -60,7 +60,7 @@ jobject getJavaByteBuffer(JNIEnv *env, jclass c, jlong address) {
     return buffer->getJavaByteBuffer();
 }
 
-static const char *NativeByteBufferClassPathName = "org/telegrambon/tgnet/NativeByteBuffer";
+static const char *NativeByteBufferClassPathName = "org/telebon/tgnet/NativeByteBuffer";
 static JNINativeMethod NativeByteBufferMethods[] = {
         {"native_getFreeBuffer", "(I)J", (void *) getFreeBuffer},
         {"native_limit", "(J)I", (void *) limit},
@@ -409,13 +409,13 @@ void setJava(JNIEnv *env, jclass c, jboolean useJavaByteBuffers) {
     }
 }
 
-static const char *ConnectionsManagerClassPathName = "org/telegrambon/tgnet/ConnectionsManager";
+static const char *ConnectionsManagerClassPathName = "org/telebon/tgnet/ConnectionsManager";
 static JNINativeMethod ConnectionsManagerMethods[] = {
         {"native_getCurrentTimeMillis", "(I)J", (void *) getCurrentTimeMillis},
         {"native_getCurrentTime", "(I)I", (void *) getCurrentTime},
         {"native_isTestBackend", "(I)I", (void *) isTestBackend},
         {"native_getTimeDifference", "(I)I", (void *) getTimeDifference},
-        {"native_sendRequest", "(IJLorg/telegrambon/tgnet/RequestDelegateInternal;Lorg/telegrambon/tgnet/QuickAckDelegate;Lorg/telegrambon/tgnet/WriteToSocketDelegate;IIIZI)V", (void *) sendRequest},
+        {"native_sendRequest", "(IJLorg/telebon/tgnet/RequestDelegateInternal;Lorg/telebon/tgnet/QuickAckDelegate;Lorg/telebon/tgnet/WriteToSocketDelegate;IIIZI)V", (void *) sendRequest},
         {"native_cancelRequest", "(IIZ)V", (void *) cancelRequest},
         {"native_cleanUp", "(IZ)V", (void *) cleanUp},
         {"native_cancelRequestsForGuid", "(II)V", (void *) cancelRequestsForGuid},
@@ -437,7 +437,7 @@ static JNINativeMethod ConnectionsManagerMethods[] = {
         {"native_setPushConnectionEnabled", "(IZ)V", (void *) setPushConnectionEnabled},
         {"native_setJava", "(Z)V", (void *) setJava},
         {"native_applyDnsConfig", "(IJLjava/lang/String;I)V", (void *) applyDnsConfig},
-        {"native_checkProxy", "(ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegrambon/tgnet/RequestTimeDelegate;)J", (void *) checkProxy},
+        {"native_checkProxy", "(ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telebon/tgnet/RequestTimeDelegate;)J", (void *) checkProxy},
         {"native_onHostNameResolved", "(Ljava/lang/String;JLjava/lang/String;)V", (void *) onHostNameResolved}
 };
 
@@ -464,7 +464,7 @@ extern "C" int registerNativeTgNetFunctions(JavaVM *vm, JNIEnv *env) {
         return JNI_FALSE;
     }
     
-    jclass_RequestDelegateInternal = (jclass) env->NewGlobalRef(env->FindClass("org/telegrambon/tgnet/RequestDelegateInternal"));
+    jclass_RequestDelegateInternal = (jclass) env->NewGlobalRef(env->FindClass("org/telebon/tgnet/RequestDelegateInternal"));
     if (jclass_RequestDelegateInternal == 0) {
         return JNI_FALSE;
     }
@@ -473,7 +473,7 @@ extern "C" int registerNativeTgNetFunctions(JavaVM *vm, JNIEnv *env) {
         return JNI_FALSE;
     }
 
-    jclass_RequestTimeDelegate = (jclass) env->NewGlobalRef(env->FindClass("org/telegrambon/tgnet/RequestTimeDelegate"));
+    jclass_RequestTimeDelegate = (jclass) env->NewGlobalRef(env->FindClass("org/telebon/tgnet/RequestTimeDelegate"));
     if (jclass_RequestTimeDelegate == 0) {
         return JNI_FALSE;
     }
@@ -482,7 +482,7 @@ extern "C" int registerNativeTgNetFunctions(JavaVM *vm, JNIEnv *env) {
         return JNI_FALSE;
     }
 
-    jclass_QuickAckDelegate = (jclass) env->NewGlobalRef(env->FindClass("org/telegrambon/tgnet/QuickAckDelegate"));
+    jclass_QuickAckDelegate = (jclass) env->NewGlobalRef(env->FindClass("org/telebon/tgnet/QuickAckDelegate"));
     if (jclass_RequestDelegateInternal == 0) {
         return JNI_FALSE;
     }
@@ -491,7 +491,7 @@ extern "C" int registerNativeTgNetFunctions(JavaVM *vm, JNIEnv *env) {
         return JNI_FALSE;
     }
 
-    jclass_WriteToSocketDelegate = (jclass) env->NewGlobalRef(env->FindClass("org/telegrambon/tgnet/WriteToSocketDelegate"));
+    jclass_WriteToSocketDelegate = (jclass) env->NewGlobalRef(env->FindClass("org/telebon/tgnet/WriteToSocketDelegate"));
     if (jclass_WriteToSocketDelegate == 0) {
         return JNI_FALSE;
     }
@@ -499,7 +499,7 @@ extern "C" int registerNativeTgNetFunctions(JavaVM *vm, JNIEnv *env) {
     if (jclass_WriteToSocketDelegate_run == 0) {
         return JNI_FALSE;
     }
-    jclass_ConnectionsManager = (jclass) env->NewGlobalRef(env->FindClass("org/telegrambon/tgnet/ConnectionsManager"));
+    jclass_ConnectionsManager = (jclass) env->NewGlobalRef(env->FindClass("org/telebon/tgnet/ConnectionsManager"));
     if (jclass_ConnectionsManager == 0) {
         return JNI_FALSE;
     }
