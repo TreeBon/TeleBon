@@ -216,6 +216,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private View timeItem2;
     private ActionBarMenuItem attachItem;
     private ActionBarMenuItem headerItem;
+
+    //// BONLANG
+    private ActionBarMenuItem languageItem;
+
     private ActionBarMenuItem editTextItem;
     private ActionBarMenuItem searchItem;
     private RadialProgressView progressBar;
@@ -711,6 +715,14 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     private final static int id_chat_compose_panel = 1000;
 
+    //// BONLANG
+    private final static int language_none = 10001;
+    private final static int language_arabic = 10002;
+    private final static int language_english = 10003;
+    private final static int language_french = 10004;
+    private final static int language_greece = 10005;
+
+
     RecyclerListView.OnItemLongClickListenerExtended onItemLongClickListener = new RecyclerListView.OnItemLongClickListenerExtended() {
         @Override
         public boolean onItemClick(View view, int position, float x, float y) {
@@ -1173,6 +1185,18 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     } else {
                         finishFragment();
                     }
+                //// BONLANG
+                } else if (id == language_none ||
+                           id == language_arabic ||
+                           id == language_french ||
+                           id == language_english ||
+                           id == language_greece) {
+                    SharedPreferences langPrefs = MessagesController.getMainSettings(currentAccount);
+                    SharedPreferences.Editor editor = langPrefs.edit();
+                    editor.putInt(String.valueOf(dialog_id) + "_language", id);
+                    editor.commit();
+                    languageItem.setIcon(R.drawable.rainbow);
+
                 } else if (id == copy) {
                     String str = "";
                     int previousUid = 0;
@@ -1378,8 +1402,28 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         chatActivityEnterView.getEditField().makeSelectedRegular();
                     }
                 }
+
             }
         });
+
+        //// BONLANG
+        ActionBarMenu langMenu = actionBar.createMenu();
+        languageItem = langMenu.addItem(0, R.drawable.smiles_panel_flags);
+        languageItem.setTag(null);
+        SharedPreferences langPrefs = MessagesController.getMainSettings(currentAccount);
+        int actuallang;
+        //try {
+        actuallang = langPrefs.getInt(String.valueOf(dialog_id) + "_language", 0);
+        //}
+        //catch (Exception e){
+          //  actuallang = language_none;
+        //}
+        if (actuallang == 0) actuallang = language_none;
+        if (actuallang != language_none) languageItem.addSubItem(language_none, "off");
+        if (actuallang != language_arabic) languageItem.addSubItem(language_arabic, "arabic");
+        if (actuallang != language_english) languageItem.addSubItem(language_english, "english");
+        if (actuallang != language_french) languageItem.addSubItem(language_french, "french");
+        if (actuallang != language_greece) languageItem.addSubItem(language_greece, "greece");
 
         avatarContainer = new ChatAvatarContainer(context, this, currentEncryptedChat != null);
         if (inPreviewMode) {
@@ -1515,6 +1559,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
 
         if (!inScheduleMode) {
+
             headerItem = menu.addItem(0, R.drawable.ic_ab_other);
             headerItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", R.string.AccDescrMoreOptions));
             if (currentUser != null) {
@@ -1596,6 +1641,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 headerItem.addSubItem(bot_help, R.drawable.menu_help, LocaleController.getString("BotHelp", R.string.BotHelp));
                 updateBotButtons();
             }
+
         }
 
         updateTitle();

@@ -142,6 +142,7 @@ public class BaseFragment {
     public void setParentFragment(BaseFragment fragment) {
         setParentLayout(fragment.parentLayout);
         fragmentView = createView(parentLayout.getContext());
+        fragmentView = createView(parentLayout.getContext());
     }
 
     protected void setParentLayout(ActionBarLayout layout) {
