@@ -715,7 +715,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     private final static int id_chat_compose_panel = 1000;
 
-    //// BONLANG
+    //// TELEBON-DEV BONLANG
     private final static int language_none = 10001;
     private final static int language_arabic = 10002;
     private final static int language_english = 10003;
@@ -1124,6 +1124,31 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
     }
 
+    //// TELEBON-DEV
+    public void updateLanguageMenu(int actualLang){
+        languageItem.removeAllSubItems();
+        if(actualLang == 0) actualLang =language_none;
+
+        String text;
+        text = "off";
+        languageItem.addSubItem(language_none,(actualLang == language_none)? makeBold(text) : new SpannableStringBuilder(text));
+        text = "arabic";
+        languageItem.addSubItem(language_arabic,(actualLang == language_arabic)? makeBold(text) : new SpannableStringBuilder(text));
+        text = "english";
+        languageItem.addSubItem(language_english,(actualLang == language_english)? makeBold(text) : new SpannableStringBuilder(text));
+        text = "french";
+        languageItem.addSubItem(language_french,(actualLang == language_french)? makeBold(text) : new SpannableStringBuilder(text));
+        text = "greece";
+        languageItem.addSubItem(language_greece,(actualLang == language_greece)? makeBold(text) : new SpannableStringBuilder(text));
+
+    }
+
+    public SpannableStringBuilder makeBold(String text){
+        SpannableStringBuilder stringBuilder = new SpannableStringBuilder(text);
+        stringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.getTypeface("fonts/rmedium.ttf")), 0, stringBuilder.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        return stringBuilder;
+    }
+
     @Override
     public View createView(Context context) {
         if (chatMessageCellsCache.isEmpty()) {
@@ -1185,17 +1210,19 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     } else {
                         finishFragment();
                     }
-                //// BONLANG
+                //// TELEBON-DEV BONLANG
                 } else if (id == language_none ||
                            id == language_arabic ||
                            id == language_french ||
                            id == language_english ||
                            id == language_greece) {
+
                     SharedPreferences langPrefs = MessagesController.getMainSettings(currentAccount);
                     SharedPreferences.Editor editor = langPrefs.edit();
                     editor.putInt(String.valueOf(dialog_id) + "_language", id);
                     editor.commit();
-                    languageItem.setIcon(R.drawable.rainbow);
+                    //languageItem.setIcon(R.drawable.rainbow);
+                    updateLanguageMenu(id);
 
                 } else if (id == copy) {
                     String str = "";
@@ -1406,24 +1433,14 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         });
 
-        //// BONLANG
+        //// TELEBON-DEV BONLANG
         ActionBarMenu langMenu = actionBar.createMenu();
-        languageItem = langMenu.addItem(0, R.drawable.smiles_panel_flags);
+        languageItem = langMenu.addItem(0, R.drawable.rainbow);
         languageItem.setTag(null);
+
         SharedPreferences langPrefs = MessagesController.getMainSettings(currentAccount);
-        int actuallang;
-        //try {
-        actuallang = langPrefs.getInt(String.valueOf(dialog_id) + "_language", 0);
-        //}
-        //catch (Exception e){
-          //  actuallang = language_none;
-        //}
-        if (actuallang == 0) actuallang = language_none;
-        if (actuallang != language_none) languageItem.addSubItem(language_none, "off");
-        if (actuallang != language_arabic) languageItem.addSubItem(language_arabic, "arabic");
-        if (actuallang != language_english) languageItem.addSubItem(language_english, "english");
-        if (actuallang != language_french) languageItem.addSubItem(language_french, "french");
-        if (actuallang != language_greece) languageItem.addSubItem(language_greece, "greece");
+        int actuallang = langPrefs.getInt(String.valueOf(dialog_id) + "_language", 0);
+        updateLanguageMenu(actuallang);
 
         avatarContainer = new ChatAvatarContainer(context, this, currentEncryptedChat != null);
         if (inPreviewMode) {

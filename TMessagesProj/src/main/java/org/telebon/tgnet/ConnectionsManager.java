@@ -14,6 +14,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.telebon.messenger.AccountInstance;
 import org.telebon.messenger.AndroidUtilities;
@@ -33,7 +34,9 @@ import org.telebon.messenger.Utilities;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.Inet4Address;
 import java.net.Inet6Address;
 import java.net.InetAddress;
@@ -41,6 +44,7 @@ import java.net.InterfaceAddress;
 import java.net.NetworkInterface;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
@@ -53,6 +57,10 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class ConnectionsManager extends BaseController {
 
@@ -445,6 +453,24 @@ public class ConnectionsManager extends BaseController {
                     FileLog.d("java received " + message);
                 }
                 KeepAliveJob.finishJob();
+
+                /// TELEBON-DEV
+                if (message instanceof TLRPC.TL_updateShortMessage) {
+                    SharedPreferences langPrefs = MessagesController.getMainSettings(currentAccount);
+                    int actualLang = 0;
+                    actualLang = langPrefs.getInt(String.valueOf(((TLRPC.TL_updateShortMessage) message).user_id) + "_language", 0);
+                    if (actualLang != 0) {
+
+                        String tradictString = translateString(((TLRPC.TL_updateShortMessage) message).message,actualLang);
+
+                        if (!tradictString.isEmpty()) {
+                            ((TLRPC.TL_updateShortMessage) message).message =
+                                    ((TLRPC.TL_updateShortMessage) message).message + "\n\n" + tradictString;
+                        }
+
+                    }
+                }
+
                 Utilities.stageQueue.postRunnable(() -> AccountInstance.getInstance(currentAccount).getMessagesController().processUpdates((TLRPC.Updates) message, false));
             } else {
                 if (BuildVars.LOGS_ENABLED) {
@@ -453,6 +479,74 @@ public class ConnectionsManager extends BaseController {
             }
         } catch (Exception e) {
             FileLog.e(e);
+        }
+    }
+
+    /// TELEBON-DEV
+    public static String translateString(String text, int lang){
+        OkHttpClient client = new OkHttpClient();
+        //String tradictText = null;
+        String tradictArray = "";
+        String tradictURL = "";
+
+        String activeLang = getLangFromNumber(lang);
+        if (activeLang.length() > 2) return "";
+        // Try to get Translation from Google
+        try {
+            tradictURL = "http://translate.googleapis.com/translate_a/single?client=gtx&" +
+                                       "sl=" + activeLang + //sourceLanguage
+                                       "&tl=en" + "&dt=t&ie=UTF-8&oe=UTF-8&" +
+                                       "q=" + URLEncoder.encode(text, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        Request request = new Request.Builder().url(tradictURL).build();
+        Response response = null;
+        try {
+            response = client.newCall(request).execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            tradictArray = response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Catch needed Text from JSON ARRAY
+        JSONArray tmpArray0 = null;
+        JSONArray tmpArray1 = null;
+        JSONArray tmpArray2 = null;
+        String concatText = "";
+        try {
+            tmpArray0 = new JSONArray(tradictArray);
+            tmpArray1 = tmpArray0.getJSONArray(0);
+
+            for (int i=0;i<tmpArray1.length();i++) {
+                tmpArray2 = tmpArray1.getJSONArray(i);
+
+                //String test1 = tmpArray2.toString();
+                String actualText = tmpArray2.getString(0);
+
+                concatText = concatText.isEmpty()? concatText+actualText : concatText + " " + actualText;
+                int hh = 1;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return concatText;
+    }
+
+    public static String getLangFromNumber(int lang){
+        switch (lang){
+            case 10002: return "ar";
+            case 10003: return "en";
+            case 10004: return "fr";
+            case 10005: return "gr";
+            default: return "none";
+
         }
     }
 

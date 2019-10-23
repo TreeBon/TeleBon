@@ -859,10 +859,11 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             if (folderId != 0) {
                 actionBar.setTitle(LocaleController.getString("ArchivedChats", R.string.ArchivedChats));
             } else {
+                /////////// TELEBON-DEV
                 if (BuildVars.DEBUG_VERSION) {
                     actionBar.setTitle("TeleBon Beta"/*LocaleController.getString("AppNameBeta", R.string.AppNameBeta)*/);
                 } else {
-                    actionBar.setTitle(LocaleController.getString("AppName", R.string.AppName));
+                    actionBar.setTitle("TeleBon"/*LocaleController.getString("AppName", R.string.AppName)*/);
                 }
             }
             actionBar.setSupportsHolidayImage(true);

@@ -2280,6 +2280,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         sendMessage(null, caption, null, photo, null, null, null, null, null, peer, path, reply_to_msg, null, true, null, entities, replyMarkup, params, notify, scheduleDate, ttl, parentObject);
     }
 
+    public String getLangFromNumber(int lang){
+        switch (lang){
+            case 10002: return "ar";
+            case 10003: return "en";
+            case 10004: return "fr";
+            case 10005: return "gr";
+            default: return "none";
+
+        }
+    }
+
     private void sendMessage(String message, String caption, TLRPC.MessageMedia location, TLRPC.TL_photo photo, VideoEditedInfo videoEditedInfo, TLRPC.User user, TLRPC.TL_document document, TLRPC.TL_game game, TLRPC.TL_messageMediaPoll poll, long peer, String path, MessageObject reply_to_msg, TLRPC.WebPage webPage, boolean searchLinks, MessageObject retryMessageObject, ArrayList<TLRPC.MessageEntity> entities, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> params, boolean notify, int scheduleDate, int ttl, Object parentObject) {
         if (user != null && user.phone == null) {
             return;
@@ -2295,6 +2306,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (params != null && params.containsKey("originalPath")) {
             originalPath = params.get("originalPath");
         }
+
 
         TLRPC.Message newMsg = null;
         MessageObject newMsgObj = null;
