@@ -720,7 +720,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private final static int language_arabic = 10002;
     private final static int language_english = 10003;
     private final static int language_french = 10004;
-    private final static int language_greece = 10005;
+    private final static int language_greek = 10005;
+    private final static int language_german = 10006;
 
 
     RecyclerListView.OnItemLongClickListenerExtended onItemLongClickListener = new RecyclerListView.OnItemLongClickListenerExtended() {
@@ -1138,8 +1139,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         languageItem.addSubItem(language_english,(actualLang == language_english)? makeBold(text) : new SpannableStringBuilder(text));
         text = "french";
         languageItem.addSubItem(language_french,(actualLang == language_french)? makeBold(text) : new SpannableStringBuilder(text));
-        text = "greece";
-        languageItem.addSubItem(language_greece,(actualLang == language_greece)? makeBold(text) : new SpannableStringBuilder(text));
+        text = "greek";
+        languageItem.addSubItem(language_greek,(actualLang == language_greek)? makeBold(text) : new SpannableStringBuilder(text));
+        text = "german";
+        languageItem.addSubItem(language_german,(actualLang == language_german)? makeBold(text) : new SpannableStringBuilder(text));
 
     }
 
@@ -1215,14 +1218,20 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                            id == language_arabic ||
                            id == language_french ||
                            id == language_english ||
-                           id == language_greece) {
+                           id == language_greek ||
+                           id == language_german) {
 
                     SharedPreferences langPrefs = MessagesController.getMainSettings(currentAccount);
                     SharedPreferences.Editor editor = langPrefs.edit();
                     editor.putInt(String.valueOf(dialog_id) + "_language", id);
                     editor.commit();
                     //languageItem.setIcon(R.drawable.rainbow);
+
+                    String test = LocaleController.getString("Language", R.string.Language);
+                    String toLang = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
+
                     updateLanguageMenu(id);
+
 
                 } else if (id == copy) {
                     String str = "";

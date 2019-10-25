@@ -491,11 +491,17 @@ public class ConnectionsManager extends BaseController {
 
         String activeLang = getLangFromNumber(lang);
         if (activeLang.length() > 2) return "";
+
+        // TO Language from TelegramOptions
+        //LocaleController.LocaleInfo currentLocale = LocaleController.getInstance().getCurrentLocaleInfo();
+        String toLang = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
+        if (toLang.isEmpty()) toLang = "en";
+
         // Try to get Translation from Google
         try {
             tradictURL = "http://translate.googleapis.com/translate_a/single?client=gtx&" +
                                        "sl=" + activeLang + //sourceLanguage
-                                       "&tl=en" + "&dt=t&ie=UTF-8&oe=UTF-8&" +
+                                       "&tl=" + toLang + "&dt=t&ie=UTF-8&oe=UTF-8&" +
                                        "q=" + URLEncoder.encode(text, "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -544,7 +550,8 @@ public class ConnectionsManager extends BaseController {
             case 10002: return "ar";
             case 10003: return "en";
             case 10004: return "fr";
-            case 10005: return "gr";
+            case 10005: return "el";
+            case 10006: return "de";
             default: return "none";
 
         }

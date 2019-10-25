@@ -215,7 +215,7 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
         int eventType = Theme.getEventType();
         if (eventType == 0) {
             items.add(new Item(2, LocaleController.getString("NewGroup", R.string.NewGroup), R.drawable.menu_groups_ny));
-            items.add(new Item(3, LocaleController.getString("NewSecretChat", R.string.NewSecretChat), R.drawable.menu_secret_ny));
+            items.add(new Item(3, LocaleController.getString("retChat", R.string.NewSecretChat), R.drawable.menu_secret_ny));
             items.add(new Item(4, LocaleController.getString("NewChannel", R.string.NewChannel), R.drawable.menu_channel_ny));
             items.add(null); // divider
             items.add(new Item(6, LocaleController.getString("Contacts", R.string.Contacts), R.drawable.menu_contacts_ny));

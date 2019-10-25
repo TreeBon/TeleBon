@@ -2661,7 +2661,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             case 10002: return "ar";
             case 10003: return "en";
             case 10004: return "fr";
-            case 10005: return "gr";
+            case 10005: return "el";
+            case 10006: return "de";
             default: return "none";
 
         }

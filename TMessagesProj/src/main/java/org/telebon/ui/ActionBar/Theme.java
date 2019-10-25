@@ -1258,8 +1258,8 @@ public class Theme {
         defaultColors.put(key_dialogLinkSelection, 0x3362a9e3);
         defaultColors.put(key_dialogTextRed, 0xffcd5a5a);
         defaultColors.put(key_dialogTextRed2, 0xffde3a3a);
-        defaultColors.put(key_dialogTextBlue, 0xff2f8cc9);
-        defaultColors.put(key_dialogTextBlue2, 0xff3a95d5);
+        defaultColors.put(key_dialogTextBlue, 0xffffbb11); //2f8cc9);   //TELEBON-DEV
+        defaultColors.put(key_dialogTextBlue2, 0xffC8930E); //3a95d5);  //TELEBON-DEV
         defaultColors.put(key_dialogTextBlue3, 0xff3ec1f9);
         defaultColors.put(key_dialogTextBlue4, 0xff19a7e8);
         defaultColors.put(key_dialogTextGray, 0xff348bc1);
@@ -1270,24 +1270,24 @@ public class Theme {
         defaultColors.put(key_dialogIcon, 0xff676b70);
         defaultColors.put(key_dialogRedIcon, 0xffe14d4d);
         defaultColors.put(key_dialogGrayLine, 0xffd2d2d2);
-        defaultColors.put(key_dialogTopBackground, 0xff6fb2e5);
+        defaultColors.put(key_dialogTopBackground, 0xffffbb11); //6fb2e5);                  // TELEBON-DEV
         defaultColors.put(key_dialogInputField, 0xffdbdbdb);
-        defaultColors.put(key_dialogInputFieldActivated, 0xff37a9f0);
-        defaultColors.put(key_dialogCheckboxSquareBackground, 0xff43a0df);
+        defaultColors.put(key_dialogInputFieldActivated, 0xffffbb11); //37a9f0);              // TELEBON-DEV
+        defaultColors.put(key_dialogCheckboxSquareBackground, 0xffffbb11); //43a0df);       // TELEBON-DEV
         defaultColors.put(key_dialogCheckboxSquareCheck, 0xffffffff);
         defaultColors.put(key_dialogCheckboxSquareUnchecked, 0xff737373);
         defaultColors.put(key_dialogCheckboxSquareDisabled, 0xffb0b0b0);
         defaultColors.put(key_dialogRadioBackground, 0xffb3b3b3);
-        defaultColors.put(key_dialogRadioBackgroundChecked, 0xff37a9f0);
+        defaultColors.put(key_dialogRadioBackgroundChecked, 0xffffbb11); //37a9f0);     // TELEBON-DEV
         defaultColors.put(key_dialogProgressCircle, 0xffffbb11);
         defaultColors.put(key_dialogLineProgress, 0xffffbb11);
         defaultColors.put(key_dialogLineProgressBackground, 0xffdbdbdb);
-        defaultColors.put(key_dialogButton, 0xff4991cc);
+        defaultColors.put(key_dialogButton, 0xffffbb11); //4991cc);         // TELEBON-DEV
         defaultColors.put(key_dialogButtonSelector, 0x0f000000);
         defaultColors.put(key_dialogScrollGlow, 0xfff5f6f7);
-        defaultColors.put(key_dialogRoundCheckBox, 0xff4cb4f5);
+        defaultColors.put(key_dialogRoundCheckBox, 0xffffbb11); //4cb4f5);      // TELEBON-DEV
         defaultColors.put(key_dialogRoundCheckBoxCheck, 0xffffffff);
-        defaultColors.put(key_dialogBadgeBackground, 0xff3ec1f9);
+        defaultColors.put(key_dialogBadgeBackground, 0xffffbb11); //3ec1f9);    // TELEBON-DEV
         defaultColors.put(key_dialogBadgeText, 0xffffffff);
         defaultColors.put(key_dialogCameraIcon, 0xffffffff);
         defaultColors.put(key_dialog_inlineProgressBackground, 0xf6f0f2f5);
@@ -1303,18 +1303,18 @@ public class Theme {
 
         defaultColors.put(key_windowBackgroundWhite, 0xffffffff);
         defaultColors.put(key_windowBackgroundUnchecked, 0xff9da7b1);
-        defaultColors.put(key_windowBackgroundChecked, 0xff579ed9);
+        defaultColors.put(key_windowBackgroundChecked, 0xffffbb11); //579ed9);      // TELEBON-DEV
         defaultColors.put(key_windowBackgroundCheckText, 0xffffffff);
         defaultColors.put(key_progressCircle, 0xffffbb11);
         defaultColors.put(key_windowBackgroundWhiteGrayIcon, 0xff81868b);
-        defaultColors.put(key_windowBackgroundWhiteBlueText, 0xff4092cd);
-        defaultColors.put(key_windowBackgroundWhiteBlueText2, 0xff3a95d5);
+        defaultColors.put(key_windowBackgroundWhiteBlueText, 0xffffbb11);  //4092cd);     //TELEBON-DEV
+        defaultColors.put(key_windowBackgroundWhiteBlueText2, 0xffC8930E); //3a95d5);     //TELEBON-DEV
         defaultColors.put(key_windowBackgroundWhiteBlueText3, 0xff2678b6);
         defaultColors.put(key_windowBackgroundWhiteBlueText4, 0xff4d83b3);
         defaultColors.put(key_windowBackgroundWhiteBlueText5, 0xff4c8eca);
         defaultColors.put(key_windowBackgroundWhiteBlueText6, 0xff3a8ccf);
         defaultColors.put(key_windowBackgroundWhiteBlueText7, 0xff377aae);
-        defaultColors.put(key_windowBackgroundWhiteBlueButton, 0xff1e88d3);
+        defaultColors.put(key_windowBackgroundWhiteBlueButton, 0xffffbb11); //1e88d3);      // TELEBON-DEV
         defaultColors.put(key_windowBackgroundWhiteBlueIcon, 0xff379de5);
         defaultColors.put(key_windowBackgroundWhiteGreenText, 0xff26972c);
         defaultColors.put(key_windowBackgroundWhiteGreenText2, 0xff37a818);
@@ -1335,29 +1335,29 @@ public class Theme {
         defaultColors.put(key_windowBackgroundWhiteGrayLine, 0xffdbdbdb);
         defaultColors.put(key_windowBackgroundWhiteBlackText, 0xff222222);
         defaultColors.put(key_windowBackgroundWhiteHintText, 0xffa8a8a8);
-        defaultColors.put(key_windowBackgroundWhiteValueText, 0xff3a95d5);
+        defaultColors.put(key_windowBackgroundWhiteValueText, 0xffC8930E); //3a95d5);
         defaultColors.put(key_windowBackgroundWhiteLinkText, 0xff2678b6);
         defaultColors.put(key_windowBackgroundWhiteLinkSelection, 0x3362a9e3);
-        defaultColors.put(key_windowBackgroundWhiteBlueHeader, 0xff3a95d5);
+        defaultColors.put(key_windowBackgroundWhiteBlueHeader, 0xffffbb11); //3a95d5);              // TELEBON-DEV
         defaultColors.put(key_windowBackgroundWhiteInputField, 0xffdbdbdb);
-        defaultColors.put(key_windowBackgroundWhiteInputFieldActivated, 0xff37a9f0);
+        defaultColors.put(key_windowBackgroundWhiteInputFieldActivated, 0xffffbb11); //37a9f0);     // TELEBON-DEV
         defaultColors.put(key_switchTrack, 0xffb0b5ba);
-        defaultColors.put(key_switchTrackChecked, 0xff52ade9);
+        defaultColors.put(key_switchTrackChecked, 0xffffbb11);//52ade9);                    // TELEBON-DEV
         defaultColors.put(key_switchTrackBlue, 0xff828e99);
-        defaultColors.put(key_switchTrackBlueChecked, 0xff3c88c7);
+        defaultColors.put(key_switchTrackBlueChecked, 0xffffbb11);//0xff3c88c7);          // TELEBON-DEV
         defaultColors.put(key_switchTrackBlueThumb, 0xffffffff);
         defaultColors.put(key_switchTrackBlueThumbChecked, 0xffffffff);
-        defaultColors.put(key_switchTrackBlueSelector, 0x17404a53);
+        defaultColors.put(key_switchTrackBlueSelector, 0x17ffbb11);//404a53);               // TELEBON-DEV
         defaultColors.put(key_switchTrackBlueSelectorChecked, 0x21024781);
         defaultColors.put(key_switch2Track, 0xfff57e7e);
-        defaultColors.put(key_switch2TrackChecked, 0xff52ade9);
-        defaultColors.put(key_checkboxSquareBackground, 0xff43a0df);
+        defaultColors.put(key_switch2TrackChecked, 0xffffbb11);//52ade9);                         // TELEBON-DEV
+        defaultColors.put(key_checkboxSquareBackground, 0xffffbb11);//43a0df);              // TELEBON-DEV
         defaultColors.put(key_checkboxSquareCheck, 0xffffffff);
         defaultColors.put(key_checkboxSquareUnchecked, 0xff737373);
         defaultColors.put(key_checkboxSquareDisabled, 0xffb0b0b0);
         defaultColors.put(key_listSelector, 0x0f000000);
         defaultColors.put(key_radioBackground, 0xffb3b3b3);
-        defaultColors.put(key_radioBackgroundChecked, 0xff37a9f0);
+        defaultColors.put(key_radioBackgroundChecked, 0xffffbb11);//37a9f0);            // TELEBON-DEV
         defaultColors.put(key_windowBackgroundGray, 0xfff0f0f0);
         defaultColors.put(key_windowBackgroundGrayShadow, 0xff000000);
         defaultColors.put(key_emptyListPlaceholder, 0xff959595);
@@ -1378,7 +1378,7 @@ public class Theme {
 
         defaultColors.put(key_avatar_text, 0xffffffff);
 
-        defaultColors.put(key_avatar_backgroundSaved, 0xff66bffa);
+        defaultColors.put(key_avatar_backgroundSaved, 0xffffbb11); //66bffa);   // TELEBON-DEV
         defaultColors.put(key_avatar_backgroundArchived, 0xffa9b6c1);
         defaultColors.put(key_avatar_backgroundArchivedHidden, 0xffc6c9cc);
         defaultColors.put(key_avatar_backgroundRed, 0xffe56555);
@@ -1386,14 +1386,14 @@ public class Theme {
         defaultColors.put(key_avatar_backgroundViolet, 0xff8e85ee);
         defaultColors.put(key_avatar_backgroundGreen, 0xff76c84d);
         defaultColors.put(key_avatar_backgroundCyan, 0xff5fbed5);
-        defaultColors.put(key_avatar_backgroundBlue, 0xff549cdd);
+        defaultColors.put(key_avatar_backgroundBlue, 0xffffbb11);//549cdd);     // TELEBON-DEV
         defaultColors.put(key_avatar_backgroundPink, 0xfff2749a);
         defaultColors.put(key_avatar_backgroundGroupCreateSpanBlue, 0xffe6eff7);
 
-        defaultColors.put(key_avatar_backgroundInProfileBlue, 0xff5085b1);
-        defaultColors.put(key_avatar_backgroundActionBarBlue, 0xff598fba);
+        defaultColors.put(key_avatar_backgroundInProfileBlue, 0xffC8930E);      // TELEBON-DEV
+        defaultColors.put(key_avatar_backgroundActionBarBlue, 0xffffbb11);      // TELEBON-DEV
         defaultColors.put(key_avatar_subtitleInProfileBlue, 0xffd7eafa);
-        defaultColors.put(key_avatar_actionBarSelectorBlue, 0xff4981ad);
+        defaultColors.put(key_avatar_actionBarSelectorBlue, 0xffffbb11);//4981ad);  //TELEBON-DEV
         defaultColors.put(key_avatar_actionBarIconBlue, 0xffffffff);
 
         defaultColors.put(key_avatar_nameInMessageRed, 0xffca5650);
@@ -1401,10 +1401,10 @@ public class Theme {
         defaultColors.put(key_avatar_nameInMessageViolet, 0xff4e92cc);
         defaultColors.put(key_avatar_nameInMessageGreen, 0xff50b232);
         defaultColors.put(key_avatar_nameInMessageCyan, 0xff379eb8);
-        defaultColors.put(key_avatar_nameInMessageBlue, 0xff4e92cc);
+        defaultColors.put(key_avatar_nameInMessageBlue, 0xffffbb11); //4e92cc);     // TELEBON-DEV
         defaultColors.put(key_avatar_nameInMessagePink, 0xff4e92cc);
 
-        defaultColors.put(key_actionBarDefault, 0xffffbb11);
+        defaultColors.put(key_actionBarDefault, 0xffffbb11); //527da3
         defaultColors.put(key_actionBarDefaultIcon, 0xffffffff);
         defaultColors.put(key_actionBarActionModeDefault, 0xffffffff);
         defaultColors.put(key_actionBarActionModeDefaultTop, 0x10000000);
@@ -1437,7 +1437,7 @@ public class Theme {
         defaultColors.put(key_chats_unreadCounter, 0xff4ecc5e);
         defaultColors.put(key_chats_unreadCounterMuted, 0xffc6c9cc);
         defaultColors.put(key_chats_unreadCounterText, 0xffffffff);
-        defaultColors.put(key_chats_archiveBackground, 0xff66a9e0);
+        defaultColors.put(key_chats_archiveBackground, 0xffffbb11); //66a9e0);      // TELEBON-DEV
         defaultColors.put(key_chats_archivePinBackground, 0xff9faab3);
         defaultColors.put(key_chats_archiveIcon, 0xffffffff);
         defaultColors.put(key_chats_archiveText, 0xffffffff);
@@ -1465,13 +1465,13 @@ public class Theme {
         defaultColors.put(key_chats_sentClock, 0xff75bd5e);
         defaultColors.put(key_chats_sentError, 0xffd55252);
         defaultColors.put(key_chats_sentErrorIcon, 0xffffffff);
-        defaultColors.put(key_chats_verifiedBackground, 0xff33a8e6);
+        defaultColors.put(key_chats_verifiedBackground, 0xffffbb11); //33a8e6); // TELEBON-DEV
         defaultColors.put(key_chats_verifiedCheck, 0xffffffff);
         defaultColors.put(key_chats_muteIcon, 0xffbdc1c4);
         defaultColors.put(key_chats_mentionIcon, 0xffffffff);
         defaultColors.put(key_chats_menuBackground, 0xffffffff);
         defaultColors.put(key_chats_menuItemText, 0xff444444);
-        defaultColors.put(key_chats_menuItemCheck, 0xff598fba);
+        defaultColors.put(key_chats_menuItemCheck, 0xffffbb11); //598fba);  // TELEBON-DEV
         defaultColors.put(key_chats_menuItemIcon, 0xff889198);
         defaultColors.put(key_chats_menuName, 0xffffffff);
         defaultColors.put(key_chats_menuPhone, 0xffffffff);
@@ -1479,12 +1479,12 @@ public class Theme {
         defaultColors.put(key_chats_menuCloud, 0xffffffff);
         defaultColors.put(key_chats_menuCloudBackgroundCats, 0xff427ba9);
         defaultColors.put(key_chats_actionIcon, 0xffffffff);
-        defaultColors.put(key_chats_actionBackground, 0xff65a9e0);
-        defaultColors.put(key_chats_actionPressedBackground, 0xff569dd6);
+        defaultColors.put(key_chats_actionBackground, 0xffffbb11); //65a9e0);               // TELEBON-DEV
+        defaultColors.put(key_chats_actionPressedBackground, 0xffffbb11); // 569dd6);       // TELEBON-DEV
         defaultColors.put(key_chats_actionUnreadIcon, 0xff737373);
         defaultColors.put(key_chats_actionUnreadBackground, 0xffffffff);
         defaultColors.put(key_chats_actionUnreadPressedBackground, 0xfff2f2f2);
-        defaultColors.put(key_chats_menuTopBackgroundCats, 0xff598fba);
+        defaultColors.put(key_chats_menuTopBackgroundCats, 0xffffbb11); //598fba);  // TELEBON-DEV
 
         defaultColors.put(key_chat_attachMediaBanBackground, 0xff464646);
         defaultColors.put(key_chat_attachMediaBanText, 0xffffffff);
@@ -1564,7 +1564,7 @@ public class Theme {
         defaultColors.put(key_chat_inInstantSelected, 0xff3079b5);
         defaultColors.put(key_chat_sentError, 0xffdb3535);
         defaultColors.put(key_chat_sentErrorIcon, 0xffffffff);
-        defaultColors.put(key_chat_selectedBackground, 0x280a90f0);
+        defaultColors.put(key_chat_selectedBackground, 0x28ffbb11); //0a90f0);      // TELEBON-DEV
         defaultColors.put(key_chat_previewDurationText, 0xffffffff);
         defaultColors.put(key_chat_previewGameText, 0xffffffff);
         defaultColors.put(key_chat_inPreviewInstantText, 0xff3a8ccf);
@@ -1580,7 +1580,7 @@ public class Theme {
         defaultColors.put(key_chat_inViaBotNameText, 0xff3a8ccf);
         defaultColors.put(key_chat_outViaBotNameText, 0xff55ab4f);
         defaultColors.put(key_chat_stickerViaBotNameText, 0xffffffff);
-        defaultColors.put(key_chat_inReplyLine, 0xff599fd8);
+        defaultColors.put(key_chat_inReplyLine, 0xffffbb11); //599fd8);     // TELEBON-DEV
         defaultColors.put(key_chat_outReplyLine, 0xff6eb969);
         defaultColors.put(key_chat_stickerReplyLine, 0xffffffff);
         defaultColors.put(key_chat_inReplyNameText, 0xff3a8ccf);
@@ -1631,13 +1631,13 @@ public class Theme {
         defaultColors.put(key_chat_outAudioCacheSeekbar, 0x3fbbe3ac);
         defaultColors.put(key_chat_inAudioSeekbarSelected, 0xffbcdee8);
         defaultColors.put(key_chat_outAudioSeekbarSelected, 0xffa9dd96);
-        defaultColors.put(key_chat_inAudioSeekbarFill, 0xff72b5e8);
+        defaultColors.put(key_chat_inAudioSeekbarFill, 0xffffbb11); //72b5e8);     //TELEBON-DEV
         defaultColors.put(key_chat_outAudioSeekbarFill, 0xff78c272);
         defaultColors.put(key_chat_inVoiceSeekbar, 0xffdee5eb);
         defaultColors.put(key_chat_outVoiceSeekbar, 0xffbbe3ac);
         defaultColors.put(key_chat_inVoiceSeekbarSelected, 0xffbcdee8);
         defaultColors.put(key_chat_outVoiceSeekbarSelected, 0xffa9dd96);
-        defaultColors.put(key_chat_inVoiceSeekbarFill, 0xff72b5e8);
+        defaultColors.put(key_chat_inVoiceSeekbarFill, 0xffffbb11); //72b5e8);      // TELEBON-DEV
         defaultColors.put(key_chat_outVoiceSeekbarFill, 0xff78c272);
         defaultColors.put(key_chat_inFileProgress, 0xffebf0f5);
         defaultColors.put(key_chat_outFileProgress, 0xffdaf5c3);
@@ -1694,7 +1694,7 @@ public class Theme {
         defaultColors.put(key_chat_inLocationIcon, 0xffa2b5c7);
         defaultColors.put(key_chat_outLocationBackground, 0xffdaf5c3);
         defaultColors.put(key_chat_outLocationIcon, 0xff87bf78);
-        defaultColors.put(key_chat_inContactBackground, 0xff72b5e8);
+        defaultColors.put(key_chat_inContactBackground, 0xffffbb11); //72b5e8);     //TELEBON-DEV
         defaultColors.put(key_chat_inContactIcon, 0xffffffff);
         defaultColors.put(key_chat_outContactBackground, 0xff78c272);
         defaultColors.put(key_chat_outContactIcon, 0xffefffde);
@@ -1752,7 +1752,7 @@ public class Theme {
         defaultColors.put(key_chat_topPanelMessage, 0xff999999);
         defaultColors.put(key_chat_reportSpam, 0xffcf5957);
         defaultColors.put(key_chat_addContact, 0xff4a82b5);
-        defaultColors.put(key_chat_inLoader, 0xff72b5e8);
+        defaultColors.put(key_chat_inLoader, 0xffffbb11);   //72b5e8);  //TELEBON-DEV
         defaultColors.put(key_chat_inLoaderSelected, 0xff65abe0);
         defaultColors.put(key_chat_outLoader, 0xff78c272);
         defaultColors.put(key_chat_outLoaderSelected, 0xff6ab564);
@@ -1771,12 +1771,12 @@ public class Theme {
         defaultColors.put(key_chat_secretTimerBackground, 0xcc3e648e);
         defaultColors.put(key_chat_secretTimerText, 0xffffffff);
 
-        defaultColors.put(key_profile_creatorIcon, 0xff3a95d5);
+        defaultColors.put(key_profile_creatorIcon, 0xffC8930E); //3a95d5);      // TELEBON-DEV
         defaultColors.put(key_profile_actionIcon, 0xff81868a);
         defaultColors.put(key_profile_actionBackground, 0xffffffff);
         defaultColors.put(key_profile_actionPressedBackground, 0xfff2f2f2);
-        defaultColors.put(key_profile_verifiedBackground, 0xffb2d6f8);
-        defaultColors.put(key_profile_verifiedCheck, 0xff4983b8);
+        defaultColors.put(key_profile_verifiedBackground, 0xffffbb11); //b2d6f8);   // TELEBON-DEV
+        defaultColors.put(key_profile_verifiedCheck, 0xffffbb11); //4983b8);    // TELEBON-DEV
         defaultColors.put(key_profile_title, 0xffffffff);
         defaultColors.put(key_profile_status, 0xffd7eafa);
 
@@ -1790,7 +1790,7 @@ public class Theme {
         defaultColors.put(key_player_time, 0xff8c9296);
         defaultColors.put(key_player_progressBackground, 0xffe9eff5);
         defaultColors.put(key_player_progressCachedBackground, 0xffe9eff5);
-        defaultColors.put(key_player_progress, 0xff4b9fe3);
+        defaultColors.put(key_player_progress, 0xffffbb11); //4b9fe3);  // TELEBON-DEV
         defaultColors.put(key_player_placeholder, 0xffa8a8a8);
         defaultColors.put(key_player_placeholderBackground, 0xfff0f0f0);
         defaultColors.put(key_player_button, 0xff333333);
@@ -1991,7 +1991,7 @@ public class Theme {
 
         ThemeInfo themeInfo = new ThemeInfo();
         themeInfo.name = "Default";
-        themeInfo.previewBackgroundColor = 0xffcfd9e3;
+        themeInfo.previewBackgroundColor = 0xffffbb11; //cfd9e3;   // TELEBON-DEV
         themeInfo.previewInColor = 0xffffffff;
         themeInfo.previewOutColor = 0xfff0fee0;
         themeInfo.sortIndex = 0;
