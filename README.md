@@ -1,4 +1,11 @@
-## Telegram messenger for Android
+## Telegram messenger for Android with Google Translator
+
+Just click in the corresponding chat on the flag in the upper right and you will be able to translate from your telegram language to the choosen language.
+
+Some litte bugs still exists.
+Receiving the mail with translation still somethimes not work when phone is in deep sleep!
+
+----------------------
 
 [Telegram](https://telegram.org) is a messaging app with a focus on speed and security. It’s superfast, simple and free.
 This repo contains the official source code for [Telegram App for Android](https://play.google.com/store/apps/details?id=org.telegram.messenger).
