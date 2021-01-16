@@ -1,4 +1,4 @@
-## Telegram messenger for Android with Google Translator
+## Telegram messenger for Android with Translator
 
 Just click in the corresponding chat on the flag in the upper right and you will be able to translate from your telegram language to the choosen language.
 
